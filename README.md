@@ -1,69 +1,69 @@
-# React + TypeScript + Vite
+# Decentralized Voting DApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A decentralized voting application built with **Vite**, **React**, **TypeScript**, and **Wagmi** for secure, transparent, and immutable blockchain-based voting and proposal management.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   **Wallet Connectivity**: Simple and secure wallet connection using Wagmi and Reown.
+-   **Proposal Dashboard**: View a list of all active and past voting proposals.
+-   **Detailed Proposal View**: Inspect proposal details, descriptions, and real-time results.
+-   **On-Chain Voting**: Cast votes directly on the blockchain, ensuring transparency and security.
+-   **Admin-Only Area**: A secure panel for the contract owner to create new proposals.
+-   **Responsive Design**: A clean, mobile-friendly interface built with Tailwind CSS.
+-   **Type Safety**: Fully typed codebase with TypeScript for better developer experience.
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Frontend
+-   **Vite**: High-performance build tool and development server.
+-   **React 18**: A JavaScript library for building user interfaces.
+-   **TypeScript**: Strongly typed programming language that builds on JavaScript.
+-   **React Router**: For declarative routing in the application.
+-   **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+-   **Zustand**: Minimalistic state management.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Blockchain Integration
+-   **Wagmi**: React Hooks for Ethereum, simplifying wallet connection and contract interaction.
+-   **Viem**: A lightweight, composable, and type-safe Ethereum library.
+-   **Reown**: UI components and utilities for building Web3 apps.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Smart Contracts
+-   **Solidity**: The programming language for writing smart contracts.
+-   **AccessControl**: A simple ownership model for administrative functions.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📋 Prerequisites
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+-   Node.js (v18 or higher)
+-   Yarn or npm
+-   A Web3 wallet like MetaMask
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🔧 Installation & Setup
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1.  **Clone the repository**
+    ```bash
+    git clone <your-repo-url>
+    cd pradise2-simple-vote
+    ```
+
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Set up Environment Variables**
+    You need a WalletConnect Project ID to enable the WalletConnect modal.
+
+    -   Go to [WalletConnect Cloud](https://cloud.walletconnect.com/) and create a project to get your ID.
+    -   Create a new file named `.env` in the root of the project.
+    -   Add your project ID to the `.env` file:
+    ```env
+    VITE_WALLETCONNECT_PROJECT_ID="YOUR_WALLETCONNECT_PROJECT_ID"
+    ```
+
+4.  **Start the development server**
+    ```bash
+    npm run dev
+    ```
+    The application will be running at `http://localhost:5173`.
+
+## 📁 Project Structure
